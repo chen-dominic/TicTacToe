@@ -1,0 +1,309 @@
+.red{
+    --bg-color: #fcb6b6;
+    --turn-color: #c48181;
+    --bg-off-color: #df9797;
+
+    --op-color: #bcb8f5;
+    --op-turn-color: #6f6ca0;
+    --op-bg-off-color: #9f9bdb;
+}
+
+.blue{
+    --bg-color: #bcb8f5;
+    --turn-color: #6f6ca0;
+    --bg-off-color: #9f9bdb;
+
+    --op-color: #fcb6b6;
+    --op-turn-color: #c48181;
+    --op-bg-off-color: #df9797;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    background-color: #1b1b1b;
+}
+
+.header-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 36%;
+}
+
+.header-con .title-box{
+    border-radius: 40%;
+    display: flex;
+    height: 150px;
+    width: 0px;
+    background-color: rgb(255, 255, 255, 0);
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s all ease-in-out;
+}
+
+.header-con .title-box h1{
+    color: var(--bg-color);
+    font-size: 5rem;
+    font-weight: 1000;
+    transition: 0.4s all ease-in-out;
+}
+
+.header-con .title-box:hover{
+    background-color: rgb(0, 0, 0);
+    animation: breathe 2s infinite linear;
+}
+
+.header-con .title-box h1:hover{
+    color: var(--op-bg-off-color);
+}
+
+@keyframes flash{
+    0%{
+        color: var(--turn-color);
+    }
+    50%{
+        color: white;
+    }
+    100%{
+        color: var(--turn-color);
+    }
+}
+@keyframes bg-flash{
+    0%{
+        background-color: var(--bg-color);
+    }
+    50%{
+        background-color: var(--bg-off-color);
+    }
+    100%{
+        background-color: var(--bg-color);
+    }
+}
+
+.game-state{
+    font-size: 3rem;
+    color: var(--turn-color);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.4);
+    font-weight: 1000;
+}
+
+.board{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto auto;
+}
+
+.board .button{
+    margin: 10px 10px;
+    height: 146px;
+    width: 146px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    font-weight: bolder;
+    color: black;
+}
+
+.board .button .marker{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: black;
+}
+
+@keyframes figure8{
+    0% {
+        left: 0%;
+        top: 50%;
+      }
+    12.5% {
+        left: 25%;
+        top: 0%;
+    }
+    25% {
+        left: 50%;
+        top: 50%;
+    }
+    37.5% {
+        left: 75%;
+        bottom: -20%;
+    }
+    50% {
+        right: -20%;
+        top: 50%;
+    }
+    62.5% {
+        left: 75%;
+        top: -20%;
+    }
+    75% {
+        left: 50%;
+        top: 50%;
+    }
+    87.5% {
+        left: 25%;
+        bottom: -20%;
+    }
+    100% {
+        left: 0%;
+        top: 50%;
+    }
+}
+
+.dancers{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--turn-color);
+    box-shadow: inset -5px -5px 5px rgba(0,0,0,.2), 15px 15px 2px rgba(0,0,0,.04);
+    z-index: -1;
+    position: absolute;
+    transition: 0.2s all ease-in-out;
+  }
+  
+  .d0{
+    -webkit-animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -moz-animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -o-animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  }
+
+  .d1{
+    -o-animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    animation: moveX 3s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -webkit-animation: moveX 5s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -moz-animation: moveX 3s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  }
+
+  .d2{
+    -moz-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -o-animation: moveX 5s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+    -webkit-animation: moveX 2s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 6s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  }
+  
+  .d3{
+    -moz-animation: moveX 4s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -o-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+    -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 3s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  }
+
+  .d4{
+    -moz-animation: moveX 4s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -o-animation: moveX 1s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+    -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    animation: moveX 2s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+  }
+
+  .d5{
+    background-color: var(--op-turn-color);
+    -moz-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -o-animation: moveX 4s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 4s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+  }
+
+  .d6{
+    background-color: var(--op-turn-color);
+    -moz-animation: moveX 6s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -o-animation: moveX 3s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+    -webkit-animation: moveX 0s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  }
+
+  .d7{
+    background-color: var(--op-turn-color);
+    -moz-animation: moveX 9s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -o-animation: moveX 2s linear 0s infinite alternate, moveY 2s linear 0s infinite alternate;
+    -webkit-animation: moveX 7s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 2s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  }
+
+  .d8{
+    background-color: var(--op-turn-color);
+    -moz-animation: moveX 9s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -o-animation: moveX 1s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    -webkit-animation: moveX 8s linear 0s infinite alternate, moveY 1s linear 0s infinite alternate;
+    animation: moveX 4s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+  }
+  
+  @-webkit-keyframes moveX {
+    from { left: 0; } to { left: 99%; }
+  }
+  @-moz-keyframes moveX {
+    from { left: 0; } to { left: 99%; }
+  }
+  @-o-keyframes moveX {
+    from { left: 0; } to { left: 99%; }
+  }
+  @keyframes moveX {
+    from { left: 0; } to { left: 99%; }
+  }
+  
+  @-webkit-keyframes moveY {
+    from { top: 0; } to { top: 97%; }
+  }
+  @-moz-keyframes moveY {
+    from { top: 0; } to { top: 97%; }
+  }
+  @-o-keyframes moveY {
+    from { top: 0; } to { top: 97%; }
+  }
+  @keyframes moveY {
+    from { top: 0; } to { top: 97%; }
+  }
+
+@keyframes breathe{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.dancers:hover{
+    filter: opacity(80%);
+    animation: breathe 1s infinite linear;
+}
+
+.reset-btn{
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    background-color: rgb(167, 118, 160);
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.2s all ease-in-out;
+    text-transform: uppercase;
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+.reset-btn .btn-text {
+    font-size: 1.1rem;
+    padding: 0 2rem;
+    color: white;
+  }
+
+.reset-btn:hover{
+    filter: opacity(80%);
+    .btn-text{
+        animation: breathe 1s infinite linear;
+    }
+}

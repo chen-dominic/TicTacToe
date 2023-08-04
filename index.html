@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <title>TicTacToe</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="TicTacToe.js"></script>
+    </head>
+
+    <body class="main red">
+
+        <div class="header-con">
+            <div class="title-box">
+                <h1>TicTacToe</h1>
+            </div>
+            
+        </div>
+
+        <div class="game-state" id="game-state">Red's Turn</div>
+        <div class="board">
+            <div class="button" id="0-0" onclick="markBox('0-0');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="0-1" onclick="markBox('0-1');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="0-2" onclick="markBox('0-2');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="1-0" onclick="markBox('1-0');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="1-1" onclick="markBox('1-1');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="1-2" onclick="markBox('1-2');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="2-0" onclick="markBox('2-0');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="2-1" onclick="markBox('2-1');">
+                <h1 id="marker"></h1>
+            </div>
+            <div class="button" id="2-2" onclick="markBox('2-2');">
+                <h1 id="marker"></h1>
+            </div>
+        </div>
+
+        <div class="dancers d0" id="dancers"></div>
+        <div class="dancers d1" id="dancers"></div>
+        <div class="dancers d2" id="dancers"></div>
+        <div class="dancers d3" id="dancers"></div>
+        <div class="dancers d4" id="dancers"></div>
+        <div class="dancers d5" id="dancers"></div>
+        <div class="dancers d6" id="dancers"></div>
+        <div class="dancers d7" id="dancers"></div>
+        <div class="dancers d8" id="dancers"></div>
+
+        <button class="reset-btn" onclick="resetGame();">
+            <div class="btn-text">reset</div>
+        </button>
+    </body>
+</html>
